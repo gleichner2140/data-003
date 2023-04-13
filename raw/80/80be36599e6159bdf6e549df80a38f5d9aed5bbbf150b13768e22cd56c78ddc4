@@ -1,0 +1,45 @@
+
+
+
+背景知识：
+1、什么是大数据？
+	举例：1、商品推荐：（1）大量的订单如何存储？    （2）大量的订单如何计算？
+	      2、天气预报：（1）大量的天气数据如何存储？（2）大量的天气数据如何计算？
+
+2、核心问题？
+	（1）数据的存储：分布式文件系统：HDFS、网盘
+	（2）数据的计算：分布式计算：MapReduce
+
+主题：HDFS的高级特性
+	(*) HDFS上传文件和下载文件的过程
+		(1) 实现客户端来操作HDFS，包含的jar文件
+			  $HADOOP_HOME/share/hadoop/common
+			  $HADOOP_HOME/share/hadoop/common/lib
+			  
+			  $HADOOP_HOME/share/hadoop/hdfs
+			  $HADOOP_HOME/share/hadoop/hdfs/lib
+			  
+		(2) 原理是什么？过程是什么？
+	
+	(*) 回收站
+	(*) 配额
+	(*) 快照
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
