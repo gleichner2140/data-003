@@ -1,0 +1,45 @@
+package demo
+
+import org.apache.spark.SparkConf
+import org.apache.spark.storage.StorageLevel
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+
+//相当于Java中的static 静态
+object MyNetworkWordCount {
+
+  def main(args: Array[String]): Unit = {
+    //很重要的就是创建一个SparkStreaming Context对象  上下文对象
+    //创建一个config对象
+    val conf = new SparkConf().setAppName("MyNetworkWordCount").setMaster("local[2]")
+    val ssc = new StreamingContext(conf,Seconds(3)) //每隔3秒采集一次数据
+
+    //通过SparkStreaming Context对象 ssc，读取数据流（实时数据）
+    val lines = ssc.socketTextStream("192.168.157.111",1234,StorageLevel.MEMORY_ONLY)
+
+    //处理
+    val result = lines.flatMap(_.split(" ")).map((_,1)).reduceByKey(_ + _)
+
+    //打印
+    result.print()
+
+    //启动任务：实时计算
+    ssc.start()
+
+    //等待计算结束
+    ssc.awaitTermination()
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
