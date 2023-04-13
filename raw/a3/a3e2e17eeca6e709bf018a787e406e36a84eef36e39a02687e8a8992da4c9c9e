@@ -1,0 +1,118 @@
+
+
+一、为什么要使用Spark？什么是Spark？
+	1、MapReduce的shuffle（洗牌）有什么缺点？
+		（*）分布式计算
+		（*）shuffle过程：Map、Reduce、分区、排序、Combiner  ====> 问题：产生大量I/O操作
+	
+	2、什么是Spark？spark.apache.org
+		 Apache Spark™ is a fast and general engine for large-scale data processing. 
+		 （*）用于处理数据，相当于MapReduce
+		 （*）只有计算，没有存储
+		 
+	3、Spark的生态圈
+		（*）Spark Core：相当于MapReduce
+		（*）Spark SQL：相当于Hive，支持SQL
+		（*）Spark Streaming：流式计算，类似Storm
+
+二、Spark集群模式的部署和安装
+	Spark的体系结构：主从结构
+
+	1、Spark支持模式：StandAlone、Yarn、Mesos
+	2、伪分布模式：一台
+		1、安装JDK、关闭防火墙、配置主机名、免密码登录
+		2、tar -zxvf spark-2.1.0-bin-hadoop2.7.tgz -C ~/training/
+		3、注意：Hadoop的命令脚本跟SPark的命令脚本有冲突，只能设置一个
+		4、核心配置文件: spark-env.sh
+		    cp spark-env.sh.template spark-env.sh
+				68 export JAVA_HOME=/root/training/jdk1.8.0_144
+				69 export SPARK_MASTER_HOST=bigdata11
+				70 export SPARK_MASTER_PORT=7077
+				
+			slaves文件：配置从节点
+			      bigdata11
+				  
+		5、Web Console: http://192.168.157.11:8080/
+	
+	3、全分布模式：三台
+		1、每台：安装JDK、关闭防火墙、配置主机名、免密码登录
+		2、都在主节点配置：bigdata12
+		3、把配置好的包复制到从节点上
+		   scp -r spark-2.1.0-bin-hadoop2.7/ root@bigdata14:/root/training
+		   scp -r spark-2.1.0-bin-hadoop2.7/ root@bigdata13:/root/training
+		   
+		4、在主节点上启动： sbin/start-all.sh
+
+
+三、Spark HA（high avaibility高可用性）的实现：单点故障的问题
+	1、借助ZooKeeper：相当于是一个“数据库”
+	2、Spark HA
+	
+	查看HA实现的架构
+
+
+四、使用Spark Shell交互式编程
+	（*）有两种模式：local模式、集群模式
+		bin/spark-shell --master spark://bigdata11:7077
+		
+		注意：Spark context available as 'sc' (master = spark://bigdata11:7077, app id = app-20180107211634-0000).
+		执行WordCount程序
+		sc.textFile("/root/data.txt").flatMap(_.split(" ")).map((_,1)).reduceByKey(_ + _).collect
+
+    使用Spark Submit提交Spark任务（就是一个jar包）
+	（*）执行Spark任务：jar包: spark-examples_2.11-2.1.0.jar
+		蒙特卡罗求PI: 3.14.15926*******
+		
+		 spark-2.1.0-bin-hadoop2.7]# bin/spark-submit --master spark://bigdata11:7077 --class org.apache.spark.examples.SparkPi examples/jars/spark-examples_2.11-2.1.0.jar 100
+		 
+		 Pi is roughly 3.1418887141888714
+
+		 
+		 spark-2.1.0-bin-hadoop2.7]# bin/spark-submit --master spark://bigdata11:7077 --class org.apache.spark.examples.SparkPi examples/jars/spark-examples_2.11-2.1.0.jar 300
+		
+		 Pi is roughly 3.14163450472115
+
+	
+
+五、Spark Streaming 流式处理
+	1、网站日志流式分析的典型架构
+	2、Demo：Spark Streaming进行WordCount
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
