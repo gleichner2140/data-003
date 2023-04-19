@@ -1,0 +1,53 @@
+REM GENRE "Musique d'Aujourd'hui"
+REM DATE 1999
+REM DISCID 8D06270A
+REM COMMENT "ExactAudioCopy v0.95b4"
+PERFORMER "Yann Tiersen"
+TITLE "Tout Est Calme"
+FILE "Yann Tiersen - Tout Est Calme.APE" WAVE
+  TRACK 01 AUDIO
+    TITLE "Plus Au Sud"
+    PERFORMER "Yann Tiersen"
+    INDEX 00 00:00:00
+    INDEX 01 00:00:32
+  TRACK 02 AUDIO
+    TITLE "Les Grandes Marees"
+    PERFORMER "Yann Tiersen"
+    INDEX 00 03:01:72
+    INDEX 01 03:02:62
+  TRACK 03 AUDIO
+    TITLE "La Crise"
+    PERFORMER "Yann Tiersen"
+    INDEX 01 06:41:30
+  TRACK 04 AUDIO
+    TITLE "Tout Est Calme"
+    PERFORMER "Yann Tiersen"
+    INDEX 01 09:06:67
+  TRACK 05 AUDIO
+    TITLE "La Rupture"
+    PERFORMER "Yann Tiersen"
+    INDEX 00 12:22:22
+    INDEX 01 12:23:55
+  TRACK 06 AUDIO
+    TITLE "La Releve"
+    PERFORMER "Yann Tiersen"
+    INDEX 00 14:56:72
+    INDEX 01 14:57:20
+  TRACK 07 AUDIO
+    TITLE "La Pharmacie"
+    PERFORMER "Yann Tiersen"
+    INDEX 01 16:23:67
+  TRACK 08 AUDIO
+    TITLE "La Terrasse"
+    PERFORMER "Yann Tiersen"
+    INDEX 00 19:10:35
+    INDEX 01 19:12:00
+  TRACK 09 AUDIO
+    TITLE "L'Etal"
+    PERFORMER "Yann Tiersen"
+    INDEX 01 22:07:27
+  TRACK 10 AUDIO
+    TITLE "La Decouverte"
+    PERFORMER "Yann Tiersen"
+    INDEX 00 23:59:52
+    INDEX 01 24:01:47
