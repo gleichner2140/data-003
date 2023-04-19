@@ -1,0 +1,26 @@
+
+CSS 说明
+----------
++   mdd/oald9.css
+
+    词典当前使用的 CSS 文件
+
++   mdd/oald9.ee.css
+
+    英英：官方格式，其它版本都以此为基础。
+
++   mdd/oald9.no-audio-icon.ee.css
+
+    英英 + 无语音图标：隐藏语音图标
+
++   mdd/oald9.embed-image.ee.css
+
+    英英 + 嵌入式：嵌入 CSS 内图片，兼容欧路词典
+
++   mdd/oald9.embed-image.ec.css
+
+    英汉 + 嵌入式：融入牛津八双解，嵌入 CSS 内图片，隐藏翻译按钮
+
++   mdd/oald9.embed-image.sw.css
+
+    英汉 + 嵌入式 + 翻译按钮：默认英英，点击翻译按钮，切换到英汉
