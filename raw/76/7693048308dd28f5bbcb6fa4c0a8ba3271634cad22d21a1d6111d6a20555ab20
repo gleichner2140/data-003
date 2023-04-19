@@ -1,0 +1,32 @@
+﻿简明英汉字典增强版 - 文件说明
+ 
+ 
+这次使用 MdxBuilder 特别版，试了若干次，终于成功生成兼容 mdict 1.3的 mdx 了
+ 
+ 
+1. 适用于：GoldenDict / MDict / EDWin / 欧陆 / BlueDict
+ 
+- 简明英汉字典增强版.mdx
+- 简明英汉字典增强版-去音标.mdx
+ 
+ 
+2. 适用于：欧陆（做了原生格式，性能最好）
+ 
+- 简明增强-欧陆.zip
+- 简明增强-欧陆-去音标.zip
+ 
+ 
+3. 适用于：GoldenDict / StarDict (使用纯文本格式，没有HTML，性能好些）
+ 
+- 简明增强-stardict.zip
+
+4. 适用于：Kindle（mobigen内存限制，mobi版本词条数只有133万词条，不过已是kindle最多）
+
+- 简明增强-mobi.zip
+ 
+ 
+词典源数据 （包含备用地址）：
+https://github.com/skywind3000/ECDICT
+ 
+ 
+skywind 2017/5/21
