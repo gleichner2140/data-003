@@ -1,0 +1,1424 @@
+@charset "utf-8";
+
+
+body, div, ul, li, h1, h2, h3, h4, h5, h6, p, form, input, label, blockquote, table, thead, tbody, th, tr, td, dl, dt, dd {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    /*color:hsl(0, 0%, 20%);  */
+}
+
+.mobile {
+    font-size: 90%;
+}
+
+/* set automatically by script embedded in HTML */
+link[href^="bres"] ~ .collinsbody,
+.windowsnt.goldendict {
+    font-size: 120%;
+}
+
+link[href^="bres"] ~ .collinsbody .word_entry,
+.windowsnt.goldendict .word_entry {
+    margin-top: 20px;
+}
+
+link[href^="bres"] ~ .collinsbody .tab_multiwords,
+.windowsnt.goldendict .tab_multiwords {
+    margin-bottom: -20px;
+}
+
+span.iphone {
+    /*    display: block;
+    width: 95%;
+*/
+}
+
+.windowsnt {
+}
+
+.android {
+}
+
+/* ********************************************* */
+
+.chinese-text {
+    font-family: "Microsoft Yahei"
+}
+
+ul, li {
+    list-style: none
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    outline: none;
+    -webkit-transition: color 1s;
+    transition: color 1s;
+}
+
+a:hover,
+a.text_black:hover {
+    color: #4372b6;
+    text-decoration: underline
+}
+
+a:focus {
+    outline: none
+}
+
+img {
+    border: 0
+}
+
+/* for iphone eudic debug */
+
+#debugiPhone {
+    display: none;
+}
+
+/* **************************** Tips info ************************************ */
+
+.collins_en_cn {
+    line-height: 130%;
+    margin-top: 8px;
+    position: relative;
+    font-size: 1em;
+}
+
+.note {
+    background-color: hsl(213, 33%, 94%);
+    border: hsl(213, 33%, 88%) 1px solid;
+    line-height: 150%;
+    padding: 9px 11px 9px;
+    margin: 8px 10px 0;
+    font-size: 90%;
+    border-radius: 5px;
+    /* width: 95%; */
+    -webkit-box-shadow: 0px 0px 2px hsla(0, 0%, 20%, 0.4196078431372549);
+    box-shadow: 0px 0px 2px #3333336b;
+}
+
+.note strong {
+    font-size: 80%;
+}
+
+a.explain {
+    cursor: pointer;
+    color: hsl(215, 46%, 49%);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    border-bottom: dashed 1px hsl(215, 46%, 80%);
+    -webkit-transition: all 2s;
+    transition: all 2s;
+}
+
+div.about a.explain {
+    margin-right: 1em;
+}
+
+a.explain:hover {
+    color: #d51f30;
+}
+
+.example ul {
+    color: hsl(0, 0%, 55%);
+    padding: 0 1.8em 1px 5px;
+    position: relative;
+    margin-left: -0.8em;
+}
+
+.example.type-usage ul {
+    color: hsl(0, 0%, 23%);
+    padding: 0 1.8em 1px 19px;
+}
+
+.example.type-note ul {
+    color: hsl(0, 0%, 23%);
+    padding: 0 1.8em 1px 12px;
+}
+
+.collins_en_cn ul {
+    margin-left: 10px;
+}
+
+.example:not(.no-before) li {
+    padding-bottom: 2.9px;
+    clear: both;
+    padding-left: 1.5em;
+    line-height: 145%;
+}
+
+.example li {
+    font-size: 0.95em;
+}
+
+.no-before li p:first-child {
+    padding-bottom: 0.6em;
+}
+
+.example:not(.no-before) li:before {
+    content: '•';
+    position: absolute;
+    left: 15px;
+}
+
+.example li .text_blue {
+    color: inherit;
+    border-bottom: 1px dashed hsl(0, 0%, 85%);
+}
+
+/*li.explain_r:before, li.explain_c:before{content:'';}*/
+
+/* -------------------------------------------------------------------- */
+
+.caption {
+    background: #f7f7f7;
+    font-weight: normal;
+    padding: 6px 10px 3px 28px;
+    margin-bottom: 0.6em;
+}
+
+.note .caption {
+    background-color: inherit;
+}
+
+.caption .num {
+    position: absolute;
+    left: 6px;
+    top: 7px;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+.caption .text_blue {
+    padding-right: 8px
+}
+
+.caption > .text_blue:first-of-type {
+    padding-left: 6px
+}
+
+.caption .st {
+    font-weight: bold;
+    padding-right: 9px;
+    font-size: 80%;
+}
+
+.tab_list li.text_red,
+.caption .st {
+}
+
+.caption .st .tips_main {
+    position: absolute;
+    *top: 29px;
+    left: -1px;
+    *left: 14px
+}
+
+.caption .st .bg_tips {
+    width: 40px
+}
+
+.caption .cn_before {
+    display: none
+}
+
+/* ********** hide image & mp3 icons ************************************* */
+
+/* some guys don't need prons & pictures                                   */
+
+/* these elements are showed by colcobuildstyle_show.css(embedded in .MDD) */
+
+.collins_en_cn.image {
+    display: none;
+}
+
+.text_blue.VisualThesaurus {
+    display: none;
+}
+
+.gInfoTable.VisualThesaurus {
+    display: none;
+    /* width: 100%; */
+}
+
+/*
+.icon-speak-uk,
+.icon-speak-us {
+    display: none;
+}
+*/
+.pron.type_uk {
+    color: inherit;
+}
+
+.pron.type_us {
+    color: hsl(240, 100%, 30%);
+}
+
+.pron > span.type_us {
+    color: hsl(240, 100%, 30%);
+}
+
+.pron > span.type_uk {
+    color: hsl(0, 100%, 40%);;
+}
+
+.word_entry > .pron a:hover {
+    /* cursor: text; */
+}
+
+/* **************************************************************** */
+
+.example b, .text_blue, .gInfoTable .text_blue, .caption.grammarInfo .text_blue, note b {
+    color: hsl(201, 79%, 42%);
+}
+
+/* ********** tab for select words ********* */
+
+.tab_multiwords {
+    /* position:relative; */
+    /* bottom: -1px; */
+    /* left: 10px; */
+    /* width: 90%; */
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+.tab_multiwords a {
+    background: #208cc6;
+    color: white;
+    margin-right: 5px;
+    width: 150px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    font-size: 0.7em;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.tab_multiwords a:hover {
+    text-decoration: none;
+    background-color: hsl(201, 72%, 53%);
+}
+
+/* 用于多释义单词释义项的隐藏 ,  [work ,ring] etc.  */
+
+.part_list,
+.part_list a,
+.part_main h3,
+.part_main h3 a {
+    color: hsl(215, 46.2%, 48.8%);
+    font-size: 0.95em;
+}
+
+.hidden {
+    display: none
+}
+
+.part_main h3 {
+    padding: 10px 0 0
+}
+
+.cn_main h3 {
+    padding-left: 30px;
+}
+
+.part_main h3.close a,
+.cn_main h3.close a {
+    padding-left: 5px;
+    display: inline-block;
+}
+
+.part_main h3.open a,
+.cn_main h3.open a {
+    padding-left: 5px;
+    display: inline-block;
+}
+
+.cn_main h3.close a,
+.cn_main h3.open a {
+    margin-left: -20px;
+    font-weight: 700
+}
+
+.part_main h3 a:hover,
+a.text_blue,
+.text_blue,
+.feedback a {
+    color: hsl(0, 0%, -4%);
+}
+
+.text_black {
+    color: #232323
+}
+
+.part_list {
+    /* background: #fff; */
+    line-height: 130%;
+    padding: 8px 10px;
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+}
+
+h3.open:before,
+h3.close:before {
+    /*   font-size: 0.6em; */
+    /*   font-family: Courier; */
+    position: absolute;
+    padding-left: 1px;
+}
+
+/*   content: "\ea0a";    */
+
+/*h3.open:before {*/
+
+h3.open:before {
+    content: "+";
+}
+
+/*    content: "\ea0b";     */
+
+h3.close:before {
+    content: "-";
+}
+
+h3 a {
+    margin-left: 10px;
+}
+
+/*  *************** word entry  : key word, phonetic symbols , prons, forms**************  */
+
+.word_entry {
+    margin-left: 10px;
+    border-top: 1px solid hsl(205, 53%, 49%);
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.form_inflected {
+    margin: 2px 0px 5px 5px;
+    font-size: 95%;
+}
+
+.form_inflected .var,
+.form_inflected .lbl {
+    display: none;
+}
+
+.form_inflected .span.show {
+    display: inline-block;
+}
+
+.form_inflected .orth {
+    color: hsl(0, 0%, 20%);
+}
+
+.form_inflected .orth .span,
+.form_inflected .orth .pron {
+    font-size: 80%;
+}
+
+link[href^="bres"] ~ .collinsbody .icon-speak-form,
+.goldendict .icon-speak-form {
+    vertical-align: super;
+    font-size: 50%;
+}
+
+.icon-speak-form {
+    /* display: none; */
+    color: hsl(0, 100%, 40%);
+    /* vertical-align:super; */
+    margin-left: 2px;
+    font-size: 60%;
+}
+
+.also {
+    margin-right: 1em;
+}
+
+.also span {
+    color: hsl(201, 72%, 45%);
+}
+
+.word_key {
+    color: hsl(201, 72%, 45%);
+    font-size: 1.6em;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px hsla(201, 3%, 54%, 0.3);
+}
+
+/* ----------------- CSS for synonyms -----------------*/
+
+.synonym {
+    margin-left: 2.7em;
+    font-size: 0.83em;
+    color: hsl(0, 0%, 60%);
+}
+
+.synonym a.explain {
+    font-size: inherit;
+    color: hsl(0, 0%, 60%);
+    text-decoration: none;
+    /*font-weight: bold;*/
+    border: none;
+    -webkit-transition: all 1s ;
+    /*border-bottom: dashed 1px hsl(215, 46%, 49%);*/
+}
+
+.synonym a {
+    color: hsl(0, 0%, 60%);
+}
+
+.synonym a:hover {
+    text-decoration: none;
+    /*border-bottom: 1px dashed;*/
+    color: hsl(201, 72%, 45%);
+}
+
+.synonym b {
+    font-weight: bold;
+    color: hsl(0, 0%, 33%);
+    font-size: 80%;
+    margin-right: 0.5em;
+}
+
+/* ------------------------------------------------------------------------- */
+
+/* ************************ word frequency *************************** */
+
+.word_frequency {
+    float: right;
+    line-height: 25.6px;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.word-frequency-img {
+    position: absolute;
+    right: 1px;
+    bottom: 20px;
+    display: inline-block;
+    transition: 0.4s;
+    -webkit-user-select: none;
+    /* Chrome, Opera, Safari */
+    -moz-user-select: none;
+    /* Firefox 2+ */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    z-index: -1;
+}
+
+link[href^="bres"] ~ .collinsbody .word-frequency-img,
+.windowsnt.goldendict .word-frequency-img {
+    z-index: 0;
+}
+
+.label {
+    display: inline-block;
+}
+
+.level {
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #f2928e;
+    border: 1px solid hsl(0, 61%, 47%);
+    margin-right: 2px;
+    vertical-align: bottom;
+    background: -webkit-radial-gradient(30% 30%, closest-corner, hsla(2, 79%, 75%,0), hsla(2, 79%, 75%,1));
+}
+
+.level.roundRed {
+    /* background-color: hsl(3, 79%, 51%); */
+    background: -webkit-radial-gradient(30% 30%, closest-corner, hsla(3, 79%, 51%,0), hsla(3, 79%, 51%,1));
+}
+
+.level1 {
+    width: 09px;
+    height: 09px;
+}
+
+.level2 {
+    width: 10px;
+    height: 10px;
+}
+
+.level3 {
+    width: 11px;
+    height: 11px;
+}
+
+.level4 {
+    width: 12px;
+    height: 12px;
+}
+
+.level5 {
+    width: 13px;
+    height: 13px;
+}
+
+.word_entry {
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 130px;
+    background-image: url("data:image/png;base64,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");
+}
+
+.collinsbody.iphone.eudic,
+.collinsbody.ipad.eudic,
+.collinsbody.android.eudic {
+    display: block;
+    /*width: 95.5%;*/
+}
+
+/* ************************** grammar information ************************* */
+.gInfoContent {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    width: 100%;
+    -webkit-transition: height 0.6s;
+    transition: height 0.6s;
+}
+
+.gInfoContainer {
+    /*min-width: 360px;*/
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.gInfoTable {
+    border-collapse: separate;
+    border-spacing: 0;
+    /*display: table;*/
+    margin-bottom: 0;
+    margin-left: 21px;
+    margin-top: 0;
+    text-align: justify;
+    text-indent: 0;
+    font-size: 0.9em;
+    table-layout: auto;
+    /*border: 1px solid hsla(0, 0%, 0%,100%);*/
+    /*min-width: 350px;*/
+    max-width: 800px;
+    width: 95%;
+    box-sizing: border-box;
+}
+
+.gInfoTable ~ .gInfoTable {
+    margin-top: 10px;
+}
+
+.grammarInfo > .caption {
+    cursor: pointer;
+    background-color: #deefe3;
+    line-height: 100%;
+    padding-top: 5px;
+}
+
+.grammarInfo > .caption .text_blue {
+    /* display: inline-block; */
+    font-size: 0.8em;
+    /* line-height: 100%; */
+    font-weight: bold;
+    line-height: 1.9em;
+    -webkit-font-smoothing: antialiased;
+    /* margin-bottom: 0.9px; */
+}
+
+.grammarInfo > .caption .text_blue.WordPartnership {
+    color: #6b59b3;
+}
+
+.grammarInfo > .caption .text_blue.Thesaurus {
+    color: #42A632;
+}
+
+.grammarInfo > .caption .text_blue.WordLink {
+    color: #2E8AE6;
+}
+
+.grammarInfo > .caption .text_blue.Usage {
+    color: #F29D61;
+    /* line-height: 100%; */
+}
+
+.grammarInfo > .caption .text_blue.Pragmatics {
+    color: #2584c4;
+    /* line-height: 100%; */
+}
+
+.grammarInfo > .caption .text_blue.VisualThesaurus {
+    color: #50a1de;
+}
+
+.gInfoTable:not(.VisualThesaurus) .gInfoCell:first-child {
+    width: 70px;
+}
+
+.gInfoTable .italic {
+    font-style: italic;
+}
+
+.gInfoTable .bold {
+    font-weight: bold;
+}
+
+.gInfoTable .st {
+    font-weight: bold;
+    font-size: 70%;
+}
+
+.gInfoTable .block {
+    display: block;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1pt;
+    text-align: left;
+    text-indent: 0;
+}
+
+.gInfoTable .text_blue {
+    font-size: 0.9em;
+}
+
+.gInfoTable .gInfoRow:first-child {
+    background-color: #ecf0f6;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* +/- */
+.grammarInfo .num {
+    font-size: 1.2em;
+    font-weight: normal;
+    top: 9px;
+    left: 8px;
+}
+
+.grammarInfo .num .plus {
+    display: none;
+}
+
+.folded.grammarInfo .num .plus {
+    display: initial;
+}
+
+.folded.grammarInfo .num .minus {
+    display: none;
+}
+
+.grammarInfo .num .minus {
+    display: initial;
+}
+
+.grammarInfo img {
+    max-width: 600px;
+}
+
+.qt4 .grammarInfo img {
+    /*width: 100%;*/
+    /*min-width: 200px;*/
+    width: auto;
+    /*min-height: 200px;*/
+    max-width: 95%;
+    /*min-height: auto;*/
+}
+
+/* usage table */
+
+.Usage.gInfoTable {
+    border: 1px solid #ddd;
+}
+
+.Usage.gInfoTable .gInfoCell {
+    border: 0px;
+}
+
+.Usage .gInfoCell.Title {
+    /*background-color: #6b59b3;*/
+    background-color: #F29D61;
+
+    color: white;
+}
+
+.Pragmatics.Usage .gInfoCell:nth-of-type(2),
+.gInfoTable.Usage .gInfoCell:nth-of-type(2){
+    /*padding-right: 150px;*/
+    min-width: 140px;
+}
+/*.Usage.gInfoTable .gInfoRow:first-child {*/
+/*background-color: #F29D61;*/
+/*!* line-height: 16.1px; *!*/
+/*}*/
+
+.Pragmatics.gInfoTable {
+    border: 1px solid #ddd;
+}
+
+.Pragmatics.gInfoTable .gInfoCell {
+    border: 0px;
+}
+
+.Pragmatics.gInfoTable .gInfoRow:first-child {
+    background-color: #2385c4;
+    /* line-height: 16.1px; */
+}
+
+.gInfoTable .WordOrder {
+    color: #4a7dc2;
+    /*vertical-align: super;*/
+    /* font-size: 1em; */
+}
+
+.gInfoRow {
+    /*display: table-row;*/
+    text-align: justify;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+
+/* 25 */
+
+.gInfoCell {
+    /*display: table-cell;*/
+    padding-bottom: 5px;
+    padding-left: 8.1px;
+    padding-right: 10px;
+    padding-top: 5px;
+    text-align: left;
+    vertical-align: inherit;
+    border: 1px solid #ddd;
+}
+
+.gInfoCell.Title {
+    color: white;
+}
+
+.gInfoTitle.VisualThesaurus {
+    color: #1797d3;
+}
+
+.WordPartnership .gInfoCell.Title {
+    background-color: #6b59b3;
+    color: white;
+}
+
+.Thesaurus .gInfoCell.Title {
+    background-color: #42A632;
+    color: white;
+}
+
+.Usage .gInfoCell.Title {
+    /* background-color: #F29D61; */
+}
+
+.WordLink .gInfoCell.Title {
+    background-color: #2E8AE6;
+    color: white
+}
+
+.gInfoTitle.Partnership {
+    /* background-color: #6b59b3; */
+    font-size: 0.9em;
+}
+
+.gInfoTitle.Theasaurus {
+    /* background-color: #42a632; */
+}
+
+.gInfoTitle.Usage {
+    background-color: #42a632;
+}
+
+.gInfoTitle.Wordlink {
+    background-color: #2e8ae6;
+}
+
+.text_midsize {
+    font-size: 1.125em;
+    line-height: 1.2;
+}
+
+/* for mobile */
+
+@media screen and (max-width: 700px) {
+
+    .word_entry {
+        background-position: right top;
+        background-size: 20%;
+        margin-left: 2px;
+    }
+
+    .word-frequency-img {
+        right: 21%;
+        top: 0px;
+        height: 10px;
+        line-height: 10px;
+    }
+
+    .caption .num {
+        left: -13px;
+        text-align: right;
+        width: 2em;
+    }
+
+    /*
+.iphone.eudic .caption .num,
+    .ipad.eudic .caption .num,
+    .android.eudic .caption .num{
+        left: -13px;
+        text-align: right;
+        width: 2em;
+    }
+*/
+    .level.roundRed {
+        background-color: hsl(3, 79%, 35%);
+        background: -webkit-radial-gradient(30% 30%, closest-corner, hsla(3, 79%, 35%,0), hsla(3, 79%, 35%,1));
+    }
+
+    .level {
+        border: 1px solid hsl(0, 0%, 0%);
+        border-radius: 50%;
+        display: inline-block;
+        background-color: #f2928e;
+        border: 1px solid hsl(0, 61%, 47%);
+        margin-right: 2px;
+        vertical-align: bottom;
+        background: -webkit-radial-gradient(30% 30%, closest-corner, hsla(2, 79%, 75%,0), hsla(2, 79%, 75%,1));
+    }
+
+    .level1,
+    .level2,
+    .level3,
+    .level4,
+    .level5 {
+        width: 5px;
+        height: 5px;
+    }
+
+    .level {
+        margin-right: 1px;
+    }
+
+    /*  .word_key{
+        font-size: 1.2em;
+    }
+    */
+    .word_entry .word_key{
+        font-size: 1.4em;
+    }
+    .word_entry > .pron {
+        padding-left: 1px;
+        font-size: 90%;
+        -webkit-user-select: none;
+        /* Chrome, Opera, Safari */
+        -moz-user-select: none;
+        /* Firefox 2+ */
+        -ms-user-select: none;
+        /* IE 10+ */
+        user-select: none;
+        /* Standard syntax */
+    }
+
+    .note {
+        margin: 8px 4px;
+        padding: 4px 10px;
+    }
+
+    .caption {
+        padding-left: 1em;
+    }
+
+    link[href^="bres"] ~ .collinsbody .caption,
+    .goldendict .caption {
+        padding-left: 1.5em;
+    }
+
+    .collins_en_cn ul {
+        margin-left: -5px;
+    }
+
+    .caption .st {
+        padding-right: 1px;
+    }
+
+    .tab_multiwords a {
+        margin-top: 3px;
+        width: 28%;
+        height: 23px;
+        line-height: 23px;
+        /*display:block;*/
+    }
+
+    .synonym {
+        margin-left: 1.7em;
+    }
+
+    .gInfoTable {
+        margin-left: 3px;
+        max-width: initial;
+        width: 96%;
+    }
+
+    .grammarInfo .num {
+        top: 9px;
+        left: 4px;
+        text-align: left;
+    }
+
+    .grammarInfo img {
+        max-width: 95%;
+    }
+
+    .grammarInfo .caption {
+        padding-left: 1.4em;
+    }
+}
+
+/* ********************** CSS for phonetic symbols  ******************** */
+
+[class^="sound-"],
+[class*="sound-"] {
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+/*.word_entry > .pron:before {
+    content: '/'
+}
+*/
+
+.word_entry > .pron a {
+    /*word-break:keep-all ;*/
+}
+
+.word_entry > .pron .pron:before {
+    content: '/';
+}
+
+.word_entry > .pron:after {
+    content: '/';
+}
+
+.word_entry > .pron {
+    padding-left: 0.5em;
+    font-size: 90%;
+}
+
+.mobile .word_entry > .pron {
+    font-size: 90%;
+}
+
+.word_entry > .pron a:hover,
+.word_entry > .form_inflected a:hover {
+    text-decoration: none;
+}
+
+.rend-u {
+    text-decoration: underline;
+}
+
+.rend-sup {
+    font-size: smaller;
+    vertical-align: super
+}
+
+.icon-speak-us {
+    color: hsl(240, 100%, 30%);
+}
+
+.icon-speak-uk {
+    color: hsl(0, 100%, 40%);
+}
+
+/* ********************** CSS for grammar tips ******************** */
+
+.tips_box {
+    /* display: block; */
+    padding-left: 0px;
+    padding-top: 0px;
+    font-size: 80%;
+    color: hsl(0, 0%, 64%);
+    /* font-family: Consolas; */
+}
+
+.tips_sentence {
+    /* display: block; */
+    padding-left: 0px;
+    padding-top: 0px;
+    font-size: 80%;
+    color: hsl(0, 0%, 64%);
+    /* font-family: Consolas; */
+}
+
+.hi.rend-sc {
+    font-variant: small-caps;
+}
+
+.hi.rend-i {
+    font-style: italic;
+}
+
+.lbl.type-register,
+.lbl.misc {
+    font-style: italic;
+}
+
+/* grammar='语法信息',
+collocation= '搭配模式
+style = 'STYLE标签',
+field='FIELD标签：',
+register ='语域标签',
+pragmatics='语用信息') 
+added these class to tips spans, do what you like
+*/
+
+.tips_grammar,
+.tips_collocation,
+.tips_style,
+.tips_field,
+.tips_register,
+.tips_pragmatics {
+}
+
+/* --------------------------- CSS for images ------------------------------- */
+
+.collins_en_cn .caption-image {
+    background: #f4ffd4;
+}
+
+.word-image-small {
+    border-radius: 5px;
+    cursor: zoom-in;
+    cursor: -webkit-zoom-in;
+    transition: 0.3s;
+    margin-left: 15px;
+}
+
+.grammarInfo .word-image-small {
+    border-radius: 0;
+    margin-left: 0;
+}
+
+.word-image-small:hover {
+    opacity: 0.7;
+}
+
+/* The Close Button */
+
+#image-close {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-right: 0.3em;
+}
+
+#image-caption:hover,
+#image-caption:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* The Modal (background) */
+
+#image-show {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    cursor: zoom-out;
+    cursor: -webkit-zoom-out;
+    /*padding-top: 10px; */
+    /*padding-bottom: 100px;*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    color: rgb(0, 0, 0);
+    /* Fallback color */
+    color: rgba(0, 0, 0, 0.7);
+    /* Black w/ opacity */
+    background-color: currentColor;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: padding-box;
+    border: 4px solid currentColor;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in;
+    /*animation-direction: reverse;*/
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+}
+
+#image-show.show {
+    /*animation-direction: normal;*/
+    display: block;
+}
+
+#image-box {
+    position: relative;
+    margin: auto;
+    /*vertical-align: middle;*/
+    /* max-width: fit-content; */
+    /* max-height: fit-content; */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 50%;
+    /*vertical-align:middle;*/
+    display: none;
+}
+
+.height#image-box {
+    /* max-height: fit-content; */
+}
+
+/* Caption of Modal Image */
+
+#image-close,
+#image-box span {
+    height: inherit;
+    line-height: inherit;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.goldendict #image-close {
+    /*position: relative;*/
+    /*top: -5px;*/
+}
+
+#image-caption {
+    display: none;
+    max-width: 700px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #ccc;
+    padding: 0px 0;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+}
+
+.image-text b {
+    color: hsl(201, 79%, 42%);
+}
+
+/* Add Animation */
+
+#word-image-full {
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 50%;
+}
+
+#word-image-full,
+#image-caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    /* min-width: 400px; */
+    max-width: 90%;
+}
+
+.height #word-image-full,
+.height #image-caption {
+    max-width: auto;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    /*50% {transform:rotate(180deg);}*/
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes zoom {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+    }
+    /*50% {transform:rotate(180deg);}*/
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.collinsbody .loading .icon-speak-us,
+.collinsbody .loading .icon-speak-uk,
+.collinsbody .loading .icon-speak-form{
+    -webkit-animation-name: ccloadingAnim;
+    animation-name: ccloadingAnim;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes ccloadingAnim {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes ccloadingAnim {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* --------------------------- CSS FOR quotations -------------------------------- */
+.note.type-quotation{
+    background-color: #eff7ff;
+    margin-bottom: 18px;
+}
+.type-quotation .quotation{
+    margin: 0 0 0px 0px;
+}
+.cit.type-quotation{
+    padding-bottom: 0.4em;
+}
+.cit.type-quotation + .cit.type-quotation{
+    padding-top: 0.4em;
+    /* border-top: hsl(210, 100%, 90%) 1px solid; */
+}
+.quotation-caption {
+    font-weight: bold;
+    margin: 5px 0 0;
+    /* border-bottom: 1px solid hsl(201, 79%, 78%); */
+    color: hsl(201, 79%, 42%);
+}
+.quotation .quote{
+    font-size: 1.2em;
+    font-weight: normal;
+    font-style: italic;
+    color: hsl(0, 0%, 55%);
+    display: inline-block;
+    margin: 5px 0 2px 0;
+}
+.quotation .quote:before{
+    content: '"';
+}
+.quotation .quote:after{
+    content: '"';
+}
+.quotation .bibl{
+    display: block;
+    color: hsl(0, 0%, 55%);
+    font-size: 0.9em;
+    margin-left: 1em;
+    /* text-align: right; */
+}
+@media screen and (min-width: 600px) {
+    .quotation .bibl{
+        text-align: left;
+    }
+}
+.quotation .bibl:before{
+    content: "- ";
+}
+.bibl .author{
+    font-weight: bold;
+}
+.bibl .title{/* text-decoration: underline; */margin-left: 0.4em;font-style: italic;}
+/* ======================== ============================ */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url(data:font/truetype;charset=utf-8;base64,AAEAAAAOAIAAAwBgRkZUTX/w9zYAAAakAAAAHEdERUYAJwANAAAGhAAAAB5PUy8yDxcGTwAAAWgAAABgY21hcOpwLgYAAAHkAAABZmdhc3AAAAAQAAAGfAAAAAhnbHlmVsOtfQAAA1wAAAE0aGVhZA5ZovkAAADsAAAANmhoZWEHMgPIAAABJAAAACRobXR4DUkAAAAAAcgAAAAcbG9jYQA4ALoAAANMAAAAEG1heHAACwBWAAABSAAAACBuYW1l+lhN2AAABJAAAAGbcG9zdIDVhT8AAAYsAAAAT3dlYmaPmVnAAAAGwAAAAAYAAQAAAAAAADy/p+JfDzz1AAsEAAAAAADV5h5jAAAAANXmQBgAAAAAA3ADgQAAAAgAAgAAAAAAAAABAAADwP/AAAAEAAAAAAADcAABAAAAAAAAAAAAAAAAAAAABwABAAAABwBUAAMAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMC/QGQAAUABAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAB6icDwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAABBAAAAAAAAAABVQAAAAAAAAIAAAAB9AAABAAAAAAAAAMAAAADAAAAHAABAAAAAABgAAMAAQAAABwABABEAAAADAAIAAIABAABACAl/Oon//3//wAAAAAAICX86if//f//AAD/5NoJFd8AAwABAAwAAAAAAAAAAAAAAAEAAwAAAQYAAAEDAAAAAAAAAQIAAAACAAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAIABAAGAAgAJoAAQAAAAAAAAAAAAIAADkCAAEAAAAAAAAAAAACAAA5AgABAAAAAAAAAAAAAgAAOQIAAQAAAAAAAAAAAAMAADkDAAMAAAAAA3ADgQAfADgAUwAAJSImJyY0Nz4BNCYnJjQ3NjIXHgMVFA4CBw4BIzEnIiYnJjQ3PgE0JicmNDc2MhceARQGBw4BByImLwEjIiY1ETQ2OwE3PgEXHgEVERQGBw4BAtAKEQcODjExMTEODg4nDh8vIBERIC8fBxEJqwkSBw4OHh8fHg4ODigOLC0tLAcSjgYMBfZzDRMTDXP2BxMJCQsLCQMGgAcIDicOMnuCezIOJw4PDx5HTVQrK1RNRx4IB1sHBw4oDh5NUE0eDigODg4scXRxLAcH2wUE9xMNAUANE/cGBAMEEAr8wAoQBAEBAAAAAA4ArgABAAAAAAABAAcAEAABAAAAAAACAAcAKAABAAAAAAADAAcAQAABAAAAAAAEAAcAWAABAAAAAAAFAAsAeAABAAAAAAAGAAcAlAABAAAAAAAKABoA0gADAAEECQABAA4AAAADAAEECQACAA4AGAADAAEECQADAA4AMAADAAEECQAEAA4ASAADAAEECQAFABYAYAADAAEECQAGAA4AhAADAAEECQAKADQAnABpAGMAbwBtAG8AbwBuAABpY29tb29uAABSAGUAZwB1AGwAYQByAABSZWd1bGFyAABpAGMAbwBtAG8AbwBuAABpY29tb29uAABpAGMAbwBtAG8AbwBuAABpY29tb29uAABWAGUAcgBzAGkAbwBuACAAMQAuADAAAFZlcnNpb24gMS4wAABpAGMAbwBtAG8AbwBuAABpY29tb29uAABGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAEZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAABAgACAQMAAwEEAQUGZ2x5cGgxB3VuaTAwMDEHdW5pMjVGQwd1bmlFQTI3AAABAAH//wAPAAEAAAAMAAAAFgAAAAIAAQABAAYAAQAEAAAAAgAAAAAAAAABAAAAANQkmLoAAAAA1eYeYwAAAADV5kAYAAFZwI+YAAA=) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*   h3.close:before, h3.open:before,   */
+
+.icon-speak-us,
+.icon-speak-uk,
+.icon-speak-form,
+a.example,
+a.example_up,
+.tips_box:before {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-diff-added:before {
+    content: "\f06b";
+}
+
+.icon-diff-removed:before {
+    content: "\f06c";
+}
+
+.icon-plus:before {
+    content: "\f05d";
+}
+
+.icon-primitive-dot:before {
+    content: "\f052";
+}
+
+.icon-pencil:before {
+    content: "\e905";
+}
+
+/*.icon-volume-high:before {
+  content: "\ea26";
+}
+.icon-volume-low:before {
+  content: "\ea28";
+}*/
