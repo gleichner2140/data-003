@@ -1,0 +1,265 @@
+	
+var $j = jQuery.noConflict();	
+
+	jQuery(document).ready(function() {  
+	//jQuery('ul.sf-menu li:first').addClass("main-links");
+	jQuery('#myslidemenu li:last-child').addClass("lastlink");
+	jQuery('.menu li:last-child').addClass("lastlink");
+	//	jQuery('ul.ourHolder li.item:nth-child(4+4n)').addClass("last");
+	//jQuery('#frontpage_3_2_box div.teaserbox:nth-child(4n+3n)').addClass("last");
+		jQuery('.jqueryslidemenu ul:first > li ').addClass("main-links");
+	//jQuery('ul.sf-menu:first > li > ul ').addClass("main-sub-links");
+	//jQuery('ul.sf-menu').superfish();
+ 	 $j(".gallery a[rel^='prettyPhoto']").prettyPhoto({theme:'facebook'});
+	
+		
+	});
+
+/*   Link text hover ============================================================= */
+
+   // jQuery("a:hover").opacity();
+	
+	
+$j(document).ready(function(){
+	$j("a[rel^='prettyPhoto']").each(function() {	
+		var $jimage = $j(this).contents("img");
+			$jhoverclass = 'hover_video';
+
+	if($j(this).attr('href').match(/(jpg|gif|jpeg|png|tif)/)) 
+	$jhoverclass = 'hover_image';
+		
+	if ($jimage.length > 0)
+	{	
+		var $jhoverbg = $j("<span class='"+$jhoverclass+"'></span>").appendTo($j(this));
+		
+			$j(this).bind('mouseenter', function(){
+			$jheight = $jimage.height();
+			$jwidth = $jimage.width();
+			$jpos =  $jimage.position();		
+			$jhoverbg.css({height:$jheight, width:$jwidth, top:$jpos.top, left:$jpos.left});
+		});
+	}
+
+});	
+
+$j("a[rel^='prettyPhoto']").contents("img").hover(function() {
+		$j(this).stop().animate({"opacity": "0.2"}, 400);
+		},function() {
+		$j(this).stop().animate({"opacity": "1"},400);
+	});
+});
+
+
+/* mini contact form widget code ============================================================= */ 
+$j(document).ready(function(){
+	$j("#mini_submit").click(function(){					   				   
+		$j(".error").hide();
+		var hasError = false;
+		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+		
+		var mini_emailToVal = $j("#mini_emailTo").val();
+		if(mini_emailToVal == '') {
+			$j("#mini_emailTo").after('<span class="error">You forgot to enter the email address In  Widget Field.</span>');
+			hasError = true;
+		} else if(!emailReg.test(mini_emailToVal)) {	
+			$j("#mini_emailTo").after('<span class="error">Enter a valid email address In widget field.</span>');
+			hasError = true;
+		}
+		
+		var mini_emailFromVal = $j("#mini_emailFrom").val();
+		if(mini_emailFromVal == '') {
+			$j("#mini_emailFrom").after('<span class="error">You forgot to enter the email address .</span>');
+			hasError = true;
+		} else if(!emailReg.test(mini_emailFromVal)) {	
+			$j("#mini_emailFrom").after('<span class="error">Enter a valid email address.</span>');
+			hasError = true;
+		}
+		
+		
+		var mini_messageVal = $j("#mini_message").val();
+		if(mini_messageVal == '') {
+			$j("#mini_message").after('<span class="error">You forgot to enter the message.</span>');
+			hasError = true;
+		}
+		var mini_nameVal = $j("#mini_name").val();
+		if(mini_nameVal == '') {
+			$j("#mini_name").after('<span class="error">Plese Enter Your Name.</span>');
+			hasError = true;
+		}
+		
+		
+		if(hasError == false) {
+			
+         $j(this).hide();
+			//$j("#sendEmail .submit").append('<img src=jquerymcolor.template_path + "images/mid-icons-1.png" alt="Loading" id="loading" />');
+			$j.post(wppath.template_path + "/lib/functions/widgets/mini_contact_sent.php",
+   				{ mini_emailTo:mini_emailToVal,mini_emailFrom:mini_emailFromVal,mini_message:mini_messageVal,mini_name:mini_nameVal},
+   					function(data){
+					
+						$j("#mini_sendEmail").slideUp("normal", function() {				   
+							
+							$j("#mini_sendEmail").after('<h1>Success</h1><p>Your email was sent.</p>');											
+						});
+   					}
+				 );
+		}
+		
+		return false;
+	});						   
+});	
+
+
+$j(document).ready(function(){
+
+//$j("ul.tabs").tabs("div > div.tab_content");
+$j("ul.tabs").tabs("div >  div.tab_content ", {tabs:'li',effect: 'fade'});
+$j("ul.vtabs").tabs("div >  div.vtab_content ", {vtabs:'li',effect: 'fade'});
+
+//$j("ul.vtabs").tabs("div > div.vtab_content");
+$j('ul.vtabs > li:first-child').addClass('vtabfirst');
+$j('ul.vtabs > li:last-child').addClass('vtablast');
+
+
+$j("ul.hvtabs").tabs("div >  div.hvtab_content ", {vtabs:'li',effect: 'fade'});
+$j('ul.hvtabs > li:first-child').addClass('hvtabfirst');
+$j('ul.hvtabs > li:last-child').addClass('hvtablast');
+
+	});
+
+/* front page slider code ============================================================= */ 
+
+$j(document).ready(function(){	
+	$j(".toggle_content").hide();
+	$j("div.trigger").click(function(){
+		$j(this).toggleClass("active").next().slideToggle("fast");
+	});
+});
+
+/* scroll top  ============================================================= */ 
+$j(document).ready(function() {   
+    $j('a[href=#top]').click(function(){
+        $j('html, body').animate({scrollTop:0}, 'slow');
+        return false;
+    });
+
+});
+
+
+$j(function(){
+	
+	//$j(".sf-menu ul li:last-child").css("border-bottom","none")	
+	//$j(".sf-menu ul li ul li:last-child").css("border-bottom","none")
+	//$j(".sf-menu ul li ul li ul li:last-child").css("border-bottom","none")	
+	//$j(".sidebar ul li:last-child").css("border-bottom","none")
+	//$j("#frontpage_3_2_box .column3:nth-child(2n+2n)").css("margin-right","0px")
+//	$j('#frontpage_3_2_box div.column3:nth-child(3n+3n)').addClass("last");
+	//$j('.filter-portfolio .portfolio4:nth-child(4n+4n)').addClass("last");
+
+	$j('#footer_frist_column > div:last-child').css("margin-bottom", '0px');
+	$j('#footer_second_column > div:last-child').css('margin-bottom', '0px');
+	$j('#footer_third_column > div:last-child').css('margin-bottom', '0px');
+	$j('.twitter_widget  > div.twitter_text:last-child').css('margin-bottom', '0px');
+	$j("div.kbox p:last-child").css("margin-bottom","10px");
+	$j("div.kround_box p:last-child").css("margin-bottom","10px");	
+	
+	$j('#mid-column-home > div:first-child').css("margin-bottom", '0px');
+	
+	$j('#mid-column-home > div:last-child').css("margin-bottom", '0px');
+	$j('.sc_category_posts li:last-child').css("margin-bottom", '0px');	
+	
+	$j('#bottom_section .widget-container:last-child').addClass("last_widgetcontainer");
+	$j('#bottom_section .widget-container ul li:last-child').css("margin-bottom", '0px');	
+	$j('.jqueryslidemenu ul li ul li:last-child').css("border-bottom", '0px');	
+	$j('.widget_categoryposts ul li:last-child').css("margin-bottom", '0px');
+	
+	//$j('#mid-column ul li.item:last-child)').css("margin-right","550px")
+	
+	
+
+
+
+})
+
+
+/* top slide box  ============================================================= */ 
+$j(document).ready(function() {
+	
+	// Expand Panel
+	$j("#open").click(function(){
+		$j("div#panel").slideDown("slow");
+	
+	});	
+	
+	// Collapse Panel
+	$j("#close").click(function(){
+		$j("div#panel").slideUp("slow");	
+	});		
+	
+	// Switch buttons from "Log In | Register" to "Close Panel" on click
+	$j("#toggle a").click(function () {
+		$j("#toggle a").toggle();
+	});		
+		
+});
+
+
+jQuery(document).ready(function() {   
+	// *************************************************************************************
+	// Contact Form script
+	// ************************************************************************************
+	
+	function validateMyAjaxInputs() {
+
+		jQuery.validity.start();
+		// Validator methods go here:
+		jQuery("#name").require();
+		jQuery("#email").require().match("email");
+		jQuery("#subject").require();	
+		jQuery("#captcha").require();
+
+		// End the validation session:
+		var result = jQuery.validity.end();
+		return result.valid;
+	}
+	jQuery("#contact-form").submit(function () { 
+							//alert(jquerymcolor.template_path);				
+			if (validateMyAjaxInputs()) { //  procced only if form has been validated ok with validity 
+				var str = jQuery(this).serialize(); 
+				jQuery.ajax({
+					type: "POST",
+					url: wppath.template_path+"/mailsend.php",
+					data: str,
+					success: function (msg) {
+						jQuery("#formstatus").ajaxComplete(function (event, request, settings) { 
+						if(msg === 'OK') {   jQuery('input[type=text]').val(""); jQuery('textarea').val(""); }
+							if (msg == 'OK') { // Message Sent? Show the 'Thank You' message
+								result = '<div class="successmsg">Your message has been sent. Thank you!</div>';
+								//jQuery('#contact-form').clearForm();
+							} else {
+								result = msg;
+							}
+							jQuery(this).html(result);
+						});
+					}
+		
+				});
+				return false;
+			}
+		});
+	});
+
+
+        jQuery(function() {
+            jQuery('.readmore_button_container a').each(function() {
+																 
+																 
+                jQuery(this).hover(
+                    function() {
+                        jQuery(this).stop().animate({ opacity: .9 }, 50);
+                    },
+					
+                   function() {
+                       jQuery(this).stop().animate({ opacity: 1}, 150);
+                   })
+                });
+        });
